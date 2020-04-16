@@ -6,7 +6,6 @@ import argparse
 
 
 def find_max_profit(prices):
-    # buy, sell, sellIndex = float("inf"), 0, float("inf")
     buy = float("inf")
     sell = 0
     sellIndex = float("inf")
@@ -20,8 +19,8 @@ def find_max_profit(prices):
     return total
 
 
-# print(find_max_profit([1050, 270, 1540, 3800, 2]))  # 3530
-print(find_max_profit([100, 90, 80, 50, 20, 10]))  # -10
+print(find_max_profit([1050, 270, 1540, 3800, 2]))  # 3530
+# print(find_max_profit([100, 90, 80, 50, 20, 10]))  # -10
 
 # if __name__ == '__main__':
 #     # This is just some code to accept inputs from the command line

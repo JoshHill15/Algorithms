@@ -12,7 +12,6 @@ import math
 #     count = [0] * recipeKeys
 #     a = 0
 #     for i in recipe:
-#         # print(i, recipe[i], ingredients[i])
 #         recipe[i] = ingredients[i] // recipe[i]
 #         if recipe[i] > 0:
 #             while recipe[i] > 0:
@@ -27,15 +26,12 @@ import math
 
 def recipe_batches(recipe, ingredients):
     recipeKeys = recipe.keys()
-    if len(recipeKeys) != len(ingredients.keys()):
+    if len(recipeKeys) <= len(ingredients.keys()):
         return 0
-    count = 0
     for i in recipe:
         recipe[i] = ingredients[i] // recipe[i]
-        if recipe[i] > 0:
-            count += 1
-    smallestValueKey = min(recipeKeys, key=lambda i: recipe[i])
-    return recipe[smallestValueKey]
+    smallestKey = min(recipeKeys, key=lambda i: recipe[i])
+    return recipe[smallestKey]
 
 
 print(recipe_batches({'milk': 2, 'sugar': 40, 'butter': 20}, {
